@@ -66,14 +66,15 @@ function addListenerHitBox(){
 
 function init(){
     addListenerHitBox()
+    playBackgroundMusic()
 };
 init();
 
-const audio = new Audio('dingo.m4a');
-audio.loop = true;
+function playBackgroundMusic() {
+    const audio = new Audio('dingo.m4a');
+    audio.loop = true;
 
-window.addEventListener('load', function() {
     audio.play().catch((error) => {
         console.error('Erro ao tentar reproduzir o áudio:', error);
     });
-});
+}
