@@ -69,14 +69,11 @@ function init(){
 };
 init();
 
-// Cria o elemento de áudio
-const audio = new Audio('dingo.m4a');
-  
-// Define as propriedades do áudio
-audio.autoplay = true; // Para iniciar automaticamente
-audio.loop = true; // Para repetir continuamente
+const audio = new Audio('./dingo.m4a');
+audio.loop = true;
 
-// Adiciona um evento para iniciar o áudio após o carregamento da página
 window.addEventListener('load', function() {
-audio.play(); // Inicia o áudio
+    audio.play().catch((error) => {
+        console.error('Erro ao tentar reproduzir o áudio:', error);
+    });
 });
