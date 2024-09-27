@@ -69,7 +69,7 @@ function init(){
 };
 init();
 
-const audio = new Audio('./dingo.m4a');
+const audio = new Audio('dingo.m4a');
 audio.loop = true;
 
 window.addEventListener('load', function() {
